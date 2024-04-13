@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Calculadora</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            -webkit-font-smoothing: antialiased;
+        }
+        .fundo {
+            background-image: linear-gradient(45deg, rebeccapurple, mediumpurple);
+            height: 100vh;
+            color: #FFFFFF;
+            font-family: Arial;
+        }
+        .calculadora {
+            position: absolute;
+            background-color: #17171C;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            border-radius: 15px;
+            padding: 15px
+        }
+
+    .botaoSete:hover, .botaoOito:hover, .botaoNove:hover,
+    .botaoFour:hover, .botaoFive:hover,
+    .botaoSix:hover, .botaoOne:hover,
+    .botaoTwo:hover, .botaoThree:hover{
+        background-color: #3e3f44;
+        transition: background-color .3s;
+    }
+
+
+        .botaoSete, .botaoOito, .botaoNove,
+        .botaoFour, .botaoFive, .botaoSix,
+        .botaoOne, .botaoTwo, .botaoThree,
+        .botaoDot, .botaoZero  {
+            width: 50px;
+            height: 50px;
+            font-size: 25px;
+            cursor: pointer;
+            border: none;
+            color: white;
+            margin: 3px;
+            background-color: #2E2F38;
+            border-radius: 6px;
+        }
+ /* #4E505F */
+
+        .botaoC, .botaoRemove {
+            width: 50px;
+            height: 50px;
+            font-size: 25px;
+            cursor: pointer;
+            border: none;
+            color: white;
+            margin: 3px;
+            background-color: #4E505F;
+            border-radius: 6px;
+        }
+
+        .botaoDivide {
+            width: 50px;
+            height: 50px;
+            font-size: 25px;
+            cursor: pointer;
+            border: none;
+            color: white;
+            margin: 3px;
+            background-color: #4E505F;
+            border-radius: 6px;
+            background-color: #4B5EFC ;
+        }
+
+        .botaoX, .botaoDivide, .botaoSub, .botaoPlus, .botaoEqual {
+            width: 50px;
+            height: 50px;
+            font-size: 25px;
+            cursor: pointer;
+            border: none;
+            color: white;
+            margin: 3px;
+            background-color: #4E505F;
+            border-radius: 6px;
+            background-color: #4B5EFC ;
+            background-color: #4B5EFC;
+        }
+
+
+
+        h1 {
+            text-align: center;
+        }
+
+        #resultado {
+            background-color: white;
+            width: 207px;
+            height: 30px;
+            margin: 5px;
+            font-size: 25px;
+            color: black;
+            text-align: right;
+            padding: 5px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="fundo">
+        <h1>Calculadora maneira</h1>
+        <div class="calculadora">
+            <h1>Calculadora</h1>
+            <p id="resultado">
+              <table>
+            <tr>
+                <!--- Função insert serve: Quando digitar o número ou simbolo, aparecer o mesmo.-->
+                <td><button class="botaoC" onclick="clean()">C</button></td>
+                <td><button class="botaoRemove" onclick="back()"><</button></td>
+                <td><button class="botaoDivide" onclick="insert(`/`)">/</button></td>
+                <td><button class="botaoX" onclick="insert(`*`)">x</button></td>
+                <tr>
+
+            <tr>
+                <td class="numeros"><button class="botaoSete" onclick="insert('7')">7</button></td>
+                <td class="numeros"><button class="botaoOito" onclick="insert('8')">8</button></td>
+                <td class="numeros"><button class="botaoNove" onclick="insert('9')">9</button></td>
+                <td><button class="botaoSub" onclick="insert('-')">-</button></td>
+            </tr>
+
+        </tr>
+            <tr>
+                <td class="numerosDois"><button class="botaoFour" onclick="insert('4')">4</button></td>
+                <td class="numerosDois"><button class="botaoFive" onclick="insert('5')">5</button></td>
+                <td class="numerosDois"><button class="botaoSix" onclick="insert('6')">6</button></td>
+                <td><button class="botaoPlus" onclick="insert('+')">+</button></td>
+            </tr>
+
+            </tr>
+            <tr>
+            <tr>
+                <td class="numeroTres"><button class="botaoOne" onclick="insert('1')">1</button></td>
+                <td class="numeroTres"><button class="botaoTwo" onclick="insert('2')">2</button></td>
+                <td class="numeroTres"><button class="botaoThree" onclick="insert('3')">3</button></td>
+                <td rowspan="2"><button class="botaoEqual" style="height: 106px" onclick="calcular()">=</button></td>
+            </tr>
+
+            </tr>
+            <tr>
+                <td colspan="2"><button class="botaoZero" style="width: 106px" onclick="insert('0')">0</button></td>
+                <td><button class="botaoDot" onclick="insert('.')">.</button></td>
+            </tr>
+        </table>
+            </p>
+        </div>
+    </div>
+
+
+    <script>
+        function insert(num) {
+           let numero =  document.getElementById(`resultado`).innerHTML
+            document.getElementById(`resultado`).innerHTML = numero + num
+        }
+
+        function clean() {
+            document.getElementById(`resultado`).innerHTML = ``
+        }
+
+        function back() {
+            let resultado = document.getElementById(`resultado`).innerHTML
+            document.getElementById(`resultado`).innerHTML = resultado.substring(0, resultado.length -1)
+        }
+
+        function calcular () {
+            let resultado = document.getElementById(`resultado`).innerHTML
+
+            if (resultado) {
+                document.getElementById(`resultado`).innerHTML = eval(resultado)
+            } else {
+                document.getElementById(`resultado`).innerHTML = `Nada`
+            }
+
+        }
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=2.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+    <div class="centralizar">
+        <div class="container">
+            <div class="fundo-container">
+                <div class="section-container">
+                    <button id="focus" class="btn btn-timer btn-focus">Foco</button>
+                    <button id="shortbreak" class="btn btn-shortbreak"> Intervalo Curto</button>
+                    <button id="longbreak" class="btn btn-longbreak">Intervalo Longo</button>
+                </div>
+                <span id="time"></span>
+                <div class="time-btn-container">
+                    <button id="btn-start" class="show">Start</button>
+                    <button id="btn-pause" class="hide">Pause</button>
+                    <button id="btn-resume" class="hide">Resume</button>
+                    <button id="btn-reset" class="hide">
+                        <i class="fa-solid fa-rotate-right"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="todo-list">
+                <button class="btn-addtask">
+                    <i class="fa-solid fa-circle-plus"></i>
+                    Add task
+                </button>
+                <input type="text" name="tarefa" id="tarefa" class="tarefa">
+            </div>
+            
+        </div>
+        <script src="index.js" defer></script>
+    </div>
+
+
+</body>
+</html>
