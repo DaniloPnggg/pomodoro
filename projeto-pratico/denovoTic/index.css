@@ -7,27 +7,31 @@
 body {
     background-color: #0E0F11;
     min-height: 100vh;
-    border: 1px solid red;
 }
 
 .centralizar{
-    border: 1px solid red;
     display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
     height: 100vh;
+    gap: 20px;
 }
 
 .container {
     display: flex;
     gap: 20px;
-    margin: 0 auto;
     flex-direction: column;
     background-color: #1B1B1B;
-    min-width: 800px;
     padding: 4rem 2rem;
     border-radius: 10px;
-
+    margin: 0 auto;
 }
+
+.centralizar img.logo{
+    width: 70px;
+}
+
 button {
     border: none;
     outline: none;
@@ -38,6 +42,11 @@ button {
     gap: 1rem;
     justify-content: center;
 }
+
+.section-container button{
+    width: 250px;
+}
+
 .btn {
     padding: 1rem 2rem;
     border-radius: 0.5rem;
@@ -45,38 +54,50 @@ button {
     color: #a9a7a7;
 }
 .btn-focus {
-    background-color: #cb202d;
+    background-color: #343538;
     color: #ffffff;
     font-weight: bold;
+    border: 2px solid rgba(255, 255, 255, 0);
+}
+
+.btn-focus:hover {
+    background-color: #8234E9;
+    transition: ease 0.5s;
+}
+
+.btn-focus:focus {
+    background-color: #8234E9;
 }
 
 .btn-shortbreak {
     background-color: #343538;
     color: #ffffff;
     font-weight: bold;
+    border: 2px solid rgba(255, 255, 255, 0);
+}
+
+.btn-shortbreak:focus {
+    background-color: #8234E9;
 }
 
 .btn-shortbreak:hover {
-    background-color: #444547;
-    transition: .35s;
-    transform:scale(1.05);
-}
-
-.btn-focus:hover {
-    background-color: #a01c25;
-    transition: .35s;
-    transform:scale(1.05);
+    background-color: #8234E9;
+    transition: ease 0.5s;
 }
 
 .btn-longbreak {
     background-color: #343538;
     color: #ffffff;
     font-weight: bold;
+    border: 2px solid rgba(255, 255, 255, 0);
 }
 .btn-longbreak:hover {
-    background-color: #444547;
-    transition: .35s;
-    transform:scale(1.05);
+    background-color: #8234E9;
+    transition: ease 0.5s;
+}
+
+.btn-longbreak:focus {
+    background-color: #8234E9;
 }
 
 .time-btn-container {
@@ -100,11 +121,14 @@ button {
     padding: 12px 40px;
     border-radius: 0.5rem;
     cursor: pointer;
-    background-color: #644B9F;
+    background-color: transparent;
+    border: 2px solid #8234E9;
     color: #ffffff;
     font-weight: bold;
     font-size: 21px;
+    transition: ease-out .2s;
 }
+
 #btn-reset {
     background-color: transparent;
     border: none;
@@ -121,23 +145,24 @@ button {
 }
 
 #btn-start:hover {
-    background-color: #744893;
-    transition: .35s;
-    transform:scale(1.1);
+    background-color: #762bd9;
+    transform:scale(1.05);
+    transition: ease-in .2s;
+
 
 }
 
 #btn-pause:hover {
-    background-color: #744893;
-    transition: .35s;
+    background-color: #762bd9;
     transform:scale(1.05);
+    transition: ease-in .2s;
 }
 
 
 #btn-resume:hover {
-    background-color: #744893;
-    transition: .35s;
-    transform:scale(1.1);
+    background-color: #762bd9;
+    transform:scale(1.05);
+    transition: ease-in .2s;
 }
 
 
@@ -188,6 +213,11 @@ button {
     border: 2px dashed #545454;
 }
 
+.btn-addtask:hover {
+    border: 2px dashed rgba(204, 204, 204, 0.35);
+    background-color: rgba(204, 204, 204, 0.05);
+}
+
 /* add task input */
 .tarefa {
     width: 100%;
@@ -200,4 +230,12 @@ button {
     font-size: 21px;
     border-style: none;
     border: 1px solid rgba(140, 140, 140, 0.07);
+}
+
+.todo-list input {
+    outline: none;
+}
+
+.todo-list input:focus {
+    border: 2px solid rgb(79, 79, 79);
 }
