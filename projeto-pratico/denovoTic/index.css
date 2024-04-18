@@ -223,10 +223,38 @@ button {
     border: 1px solid rgba(140, 140, 140, 0.07);
 }
 
+/* TodoList (Inputs de adicionar tarefa) */
+
 .todo-list input {
     outline: none;
 }
 
 .todo-list input:focus {
     border: 2px solid rgb(79, 79, 79);
+}
+
+/* Checkbox */
+
+input[type ="checkbox"] {
+    position: absolute;
+    margin-left: 2rem;
+    margin-top: 1.5rem;
+    cursor: pointer;
+}
+
+#checkboxCrossOut { /*A checkbox que risca */
+
+}
+
+/* Botão pra remover o input */
+
+
+#buttonRemove {
+    position: absolute;
+    margin-left: 2rem;
+    margin-top: 1.5rem;
+    cursor: pointer;
+    margin-left: -5rem;
+    margin-top: 1.5rem;
+
 }
