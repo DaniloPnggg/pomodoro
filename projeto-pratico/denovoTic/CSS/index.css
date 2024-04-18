@@ -1,0 +1,260 @@
+/* Estilos globais */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background-color: #0E0F11;
+    min-height: 100vh;
+}
+
+/* Estilos para centralizar os elementos */
+.centralizar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    gap: 20px;
+}
+
+/* Estilos para o container principal */
+.container {
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    background-color: #1B1B1B;
+    padding: 4rem 2rem;
+    border-radius: 10px;
+    margin: 0 auto;
+}
+
+/* Estilos para o logo */
+.centralizar img.logo {
+    width: 70px;
+}
+
+/* Estilos gerais para botões */
+button {
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+/* Estilos para o container das seções (Foco, Descanso, Longo descanso) */
+.section-container {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.section-container button {
+    width: 250px;
+}
+
+.btn {
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+    background-color: #3e3f43;
+    color: #a9a7a7;
+}
+
+/* Estilos para o botão "Foco" */
+.btn-focus {
+    background-color: #343538;
+    color: #ffffff;
+    font-weight: bold;
+    border: 2px solid rgba(255, 255, 255, 0);
+}
+
+.btn-focus:hover,
+.btn-focus:focus {
+    background-color: #8234E9;
+    transition: ease 0.5s;
+}
+
+/* Estilos para o botão "Descanso" */
+.btn-shortbreak {
+    background-color: #343538;
+    color: #ffffff;
+    font-weight: bold;
+    border: 2px solid rgba(255, 255, 255, 0);
+}
+
+.btn-shortbreak:hover,
+.btn-shortbreak:focus {
+    background-color: #8234E9;
+    transition: ease 0.5s;
+}
+
+/* Estilos para o botão "Longo descanso" */
+.btn-longbreak {
+    background-color: #343538;
+    color: #ffffff;
+    font-weight: bold;
+    border: 2px solid rgba(255, 255, 255, 0);
+}
+
+.btn-longbreak:hover,
+.btn-longbreak:focus {
+    background-color: #8234E9;
+    transition: ease 0.5s;
+}
+
+/* Estilos para o container do tempo */
+.time-btn-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Estilos para o elemento de exibição do tempo */
+#time {
+    text-align: center;
+    color: #ffffff;
+    font-size: 5rem;
+    font-weight: 600;
+}
+
+/* Estilos para os botões de controle (Iniciar, Pausar, Retomar, Reiniciar) */
+#btn-start,
+#btn-pause,
+#btn-resume {
+    padding: 12px 40px;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    background-color: transparent;
+    border: 2px solid #8234E9;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 21px;
+    transition: ease-out 0.2s;
+}
+
+#btn-start:hover,
+#btn-pause:hover,
+#btn-resume:hover {
+    background-color: #762bd9;
+    transform: scale(1.05);
+    transition: ease-in 0.2s;
+}
+
+/* Estilos para o botão de reiniciar */
+#btn-reset {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: #ffffff;
+    font-size: 2rem;
+    transition: ease-out 0.2s;
+}
+
+#btn-reset:hover {
+    color: #e8e8e8;
+    transition: ease-in 0.2s;
+    transform: scale(1.05);
+}
+
+/* Estilos para ocultar/exibir botões */
+.hide {
+    display: none;
+}
+
+.show {
+    display: block;
+}
+
+/* Tamanho das fontes para os botões de seção */
+.btn-focus,
+.btn-shortbreak,
+.btn-longbreak {
+    font-size: 21px;
+}
+
+/* Configuração do container do Pomodoro */
+.fundo-container {
+    background-color: rgba(0, 0, 0, 0.24);
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border-radius: 10px;
+}
+
+/* Estilos para o container da lista de tarefas */
+.todo-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Estilos para o botão de adicionar tarefa */
+.btn-addtask {
+    width: 100%;
+    background-color: rgba(45, 45, 45, 0.37);
+    color: #ffffff;
+    padding: 20px 40px;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 21px;
+    border: 2px dashed #545454;
+}
+
+.btn-addtask:hover {
+    border: 2px dashed rgba(204, 204, 204, 0.35);
+    background-color: rgba(204, 204, 204, 0.05);
+}
+
+/* Estilos para o input de adicionar tarefa */
+.tarefa {
+    width: 100%;
+    background-color: rgba(45, 45, 45, 0.37);
+    color: #ffffff;
+    padding: 20px 80px;
+    border-radius: 0.5rem;
+    text-align: center;
+    cursor: pointer;
+    font-size: 21px;
+    border-style: none;
+    border: 1px solid rgba(140, 140, 140, 0.07);
+}
+
+/* TodoList (Inputs de adicionar tarefa) */
+
+.todo-list input {
+    outline: none;
+}
+
+.todo-list input:focus {
+    border: 2px solid rgb(79, 79, 79);
+}
+
+/* Checkbox */
+
+input[type ="checkbox"] {
+    position: absolute;
+    margin-left: 2rem;
+    margin-top: 1.5rem;
+    cursor: pointer;
+}
+
+#checkboxCrossOut { /*A checkbox que risca */
+
+}
+
+/* Botão pra remover o input */
+
+
+#buttonRemove {
+    position: absolute;
+    margin-left: 2rem;
+    margin-top: 1.5rem;
+    cursor: pointer;
+    margin-left: -5rem;
+    margin-top: 1.5rem;
+
+}
