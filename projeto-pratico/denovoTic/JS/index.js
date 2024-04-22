@@ -124,6 +124,8 @@ btnStart.addEventListener('click', () => {
     } else {
         alert('Selecione um modo antes de iniciar.');
     }
+
+
 });
 
 function colorChanging() {
@@ -174,6 +176,8 @@ function pausebtn() {
     focus.style.cursor = `pointer`;
     shortBreakBtn.style.cursor = `pointer`;
     longBreak.style.cursor = `pointer`;
+
+
 }
 
 function shortBreak() {
@@ -321,38 +325,67 @@ addTask.addEventListener(`click`, addCheckBox)
 // #262626
 // #3e3f43
 //#8234E9
+
+// Evento mouseover para mudar a cor do shortBreakBtn quando o tempo está rodando
+
 focus.addEventListener(`mouseover`, () => {
-    if (currentInterval !== `focus`) {
-        focus.style.backgroundColor = `#313131`;
-    }
-});
+    if (counting === true && currentInterval === `focus`) {
+        focus.style.backgroundColor = `#8234E9`
 
-focus.addEventListener(`mouseout`, () => {
-    if (currentInterval !== `focus`) {
-        focus.style.backgroundColor = `#343538`;
-    }
-});
+    } else if (counting === true && currentInterval !== `focus`) {
+        focus.style.backgroundColor = `#2a2a2c`
 
-shortBreakBtn.addEventListener('mouseover', () => {
-    if (currentInterval !== `shortbreak`) {
-        shortBreakBtn.style.backgroundColor = `#313131`;
+    }  else if (counting === false && currentInterval !== `focus`) {
+        focus.style.backgroundColor = `#8234E9`
+    } else if (counting === false && currentInterval !== `focus`) {
+        focus.style.backgroundColor = `#343538`
     }
-});
+
+    focus.addEventListener(`mouseout`, () => {
+        if (counting === true && currentInterval !== `focus`) {
+            focus.style.backgroundColor = `#343538`
+        } else if (counting === false && currentInterval !== `focus`) {
+            focus.style.backgroundColor = `#343538`
+        }
+     })
+
+})
+shortBreakBtn.addEventListener(`mouseover`, () => {
+   if (counting === false && currentInterval !== `shortbreak`) {
+        shortBreakBtn.style.backgroundColor = `#8234E9`
+   } else if (counting === true && currentInterval !== `shortbreak`) {
+       shortBreakBtn.style.backgroundColor = `#2a2a2c`
+   } else if (counting === true && currentInterval === `shortbreak`) {
+       shortBreakBtn.style.backgroundColor = `#8234E9`
+   }
+
+
+})
+
 
 shortBreakBtn.addEventListener(`mouseout`, () => {
-    if (currentInterval !== `shortbreak`) {
+    if (counting === false && currentInterval !== "shortbreak") {
         shortBreakBtn.style.backgroundColor = `#343538`;
+    } else if (counting === true && currentInterval !== `shortbreak`) {
+        shortBreakBtn.style.backgroundColor = `#343538`
     }
-});
+})
 
 longBreak.addEventListener(`mouseover`, () => {
-    if (currentInterval !== `longbreak`) {
-        longBreak.style.backgroundColor = `#313131`;
+    if (!counting && currentInterval !== `longbreak`) {
+        longBreak.style.backgroundColor = `#8234E9`;
+    } else if (counting && currentInterval !== `longbreak`) {
+        longBreak.style.backgroundColor = `#2a2a2c`;
     }
 });
 
-longBreak.addEventListener('mouseout', () => {
-    if (currentInterval !== `longbreak`) {
+longBreak.addEventListener(`mouseout`, () => {
+    if (counting === false && currentInterval !== `longbreak`) {
         longBreak.style.backgroundColor = `#343538`;
+    } else if (counting === false && currentInterval !== `longbreak`) {
+        longBreak.style.backgroundColor = `#343538`
+    } else if (counting === true && currentInterval !== `longbreak`) {
+        longBreak.style.backgroundColor = `#343538`
     }
 });
+
