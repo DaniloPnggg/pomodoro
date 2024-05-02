@@ -16,6 +16,8 @@ let min = 25;
 let sec = 0;
 let timerInterval
 
+
+
 function start() {
     if (!counting) {
         counting = true;
@@ -25,9 +27,13 @@ function start() {
             const seconds = sec.toString().padStart(2, '0');
             time.textContent = `${minutes}:${seconds}`;
 
+
+            updateTitle(minutes, seconds)
+
             if (sec === 0 && min === 0) {
                 clearInterval(timerInterval);
                 counting = false;
+                playSound()
             } else if (sec === 0) {
                 min--; // Se segundos chegar a 0, decrementar
                 // o valor dos minutos em 1 e definir segundos como 59
@@ -185,6 +191,10 @@ function shortBreak() {
     min = 5;
     sec = 0;
 
+    if (min === 0 && sec === 0) {
+        playSound()
+    }
+
     btnStart.style.display = `block`;
     btnPause.style.display = `none`;
 
@@ -268,6 +278,19 @@ function longBreakAsFn() {
 
     time.textContent = `${minutes}:${seconds}`;
     colorChanging();
+
+    if (min === 0 && sec === 0) {
+        playSound()
+    }
+}
+
+function updateTitle(minutes, seconds) {
+    document.title = `${minutes}:${seconds} - Pomodoro`
+}
+
+function playSound() {
+    const audio = document.getElementById(`audio`)
+    audio.play()
 }
 
 btnPause.addEventListener(`click`, () => {
